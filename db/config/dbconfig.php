@@ -1,8 +1,8 @@
 <?php 
 $servername = "localhost";
-$username = "db-urke";
-$password = "FiadhFinn";
-$dbname = "coviddb";
+$username = "";
+$password = "";
+$dbname = "";
 
 // Creating a connection
 
