@@ -16,7 +16,7 @@ function console_log($output, $with_script_tags = true) {
     echo $js_code;
 }
 
-$connect = mysqli_connect("localhost", "db-urke", "FiadhFinn", "coviddb"); 
+$connect = mysqli_connect("", "", "", ""); 
 $query = '';
 $table_data = '';
 // json file name
