@@ -1,0 +1,85 @@
+.app__navbar {
+    background: var($gray-900);  
+    border-bottom: 1px solid var(--lightGray-color);    
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+  }
+  
+  
+  .app__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: .5rem;
+  
+    list-style: none;
+  
+    li {
+      margin: 0 1rem;
+      cursor: pointer;
+  
+      flex-direction: column;
+  
+      div {
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        border-radius: 50%;
+  
+        margin-bottom: 5px;
+      }
+  
+      a {
+        color: var(--white-color);
+        text-decoration: none;
+        flex-direction: column;
+  
+        text-transform: uppercase;
+        font-weight: 500;
+  
+        transition: all 0.3s ease-in-out;
+  
+        &:hover {
+          color: var(--secondary-color);
+        }
+      }
+  
+      &:hover {
+        div {
+          background: var(--secondary-color);
+        }
+      }
+    }
+  
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+
+.app__navbar-admin {
+
+    li {
+
+        a {
+            color: rgba(255, 255, 255, 0.5);
+      
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: .9rem;
+            
+      
+            transition: all 0.3s ease-in-out;
+      
+            &:hover {
+              color: var(--secondary-color);
+            }
+        }
+    }
+}
+
