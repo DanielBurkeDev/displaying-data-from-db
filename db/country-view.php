@@ -1,13 +1,16 @@
 <?php 
 require_once 'config/dbconfig.php';
 
+$conn = get_dbc();
+
 // shows table based on what is selected in Country dropdown
 
-$c = $_GET['c'];
-// echo "$c";
-$conn = get_dbc();
-// Query a db table named country_notification
-$sql = "SELECT * FROM country_notification WHERE country = '".$c."'";
+    $c = $_GET['c'];
+   
+    // echo "$c"; 
+    // Query a db table named country_notification
+    $sql = "SELECT * FROM country_notification WHERE country = '".$c."'";
+
 $result = $conn->query($sql);
 if ($result != null) {
     // echo "Database queried";

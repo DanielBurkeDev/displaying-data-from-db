@@ -44,8 +44,9 @@ function getYearWeek() {
         // echo "Database queried";
 
         echo '<div class="form-group">';
-        echo '<label class="form-label" for="countries">Choose a Year Week to show data:</label>';
-        echo '<select class="form-control" id="year_week" name="year_week">';
+        echo '<label class="form-label" for="year-week">Choose a Year Week to show data:</label>';
+        echo '<select class="form-control" id="year_week" name="year_week"  onchange="showYearWeekData(this.value)">';
+        echo '<option value="">Choose a Year Week:</option>';
              
         while ($row = $result->fetch_assoc()) {
             
