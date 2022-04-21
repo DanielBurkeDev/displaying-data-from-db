@@ -34,8 +34,3 @@ function showYearWeekData(str) {
     }
 
 }
-
-
-
-// $(document).ready(function () {
-// });

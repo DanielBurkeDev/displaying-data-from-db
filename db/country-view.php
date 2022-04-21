@@ -55,7 +55,4 @@ if ($result != null) {
 // closing connection
 $conn->close();
 
-
-
-
 ?>

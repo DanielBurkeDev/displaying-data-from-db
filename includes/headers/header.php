@@ -1,4 +1,8 @@
 <?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 // nav menu text
 $logo = 'COVID 19 DATA';
 
@@ -8,10 +12,12 @@ $li3 = 'API Data';
 $li4 = 'Register';
 $li5 = 'Sign In';
 $li6 = 'Profile';
+$li7 = 'Logout';
+
+
 
 ?>
     
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><?php echo $logo ?></a>
@@ -32,10 +38,19 @@ $li6 = 'Profile';
       
       </ul>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href='#'><?php echo $li4 ?></a></li>
-            <li class="nav-item"><a class="nav-link" href='#'><?php echo $li5 ?></a></li>
-            <li class="nav-item"><a class="nav-link" href='#'><?php echo $li6 ?></a></li>
-    </ul>
+        <?php 
+        if(!isset($_SESSION['SESS_MEMBER_ID'])) {?>
+
+        <li class="nav-item"><a class="nav-link <?php if ($page=='register view'){echo 'active';} ?>" <?php if ($page=='register view'){echo 'aria-current="page"';} ?>  href='register-view.php'><?php echo $li4 ?></a></li>
+        <li class="nav-item"><a class="nav-link <?php if ($page=='login view'){echo 'active';} ?>" <?php if ($page=='login view'){echo 'aria-current="page"';} ?> href='login-view.php'><?php echo $li5 ?></a></li>
+
+        <?php } else {?>
+
+        <li class="nav-item"><a class="nav-link <?php if ($page=='member profile'){echo 'active';} ?>" <?php if ($page=='member profile'){echo 'aria-current="page"';} ?> href='member-profile.php'><?php echo $li6 ?></a></li>
+        <li class="nav-item"><a class="nav-link <?php if ($page=='logout'){echo 'active';} ?>" <?php if ($page=='logout'){echo 'aria-current="page"';} ?> href='logout.php' ><?php echo $li7 ?></a></li>
+
+        <?php } ?>
+      </ul>
     </div>
   </div>
 </nav>

@@ -24,6 +24,10 @@ body {
   border-radius: 0.5rem;
 }
 
+.red {
+  color: red;
+}
+
 .content-container {
   width: 100vw;
   height: 100vh;
@@ -37,6 +41,14 @@ body {
   width: 40%;
   border: 1px solid var(--lightGray-color);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.profiledata {
+  display: flex;
+}
+
+.error {
+  color: red !important;
 }
 
 .data-filter-container {

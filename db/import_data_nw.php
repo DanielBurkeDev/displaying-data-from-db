@@ -1,12 +1,9 @@
+// THIS IMPORTS DATA TO THE DATABASE FROM THE JSON FILE
 <?php
 set_time_limit(500);
 
-// Server name => localhost
-// Username => root
-// Password => empty
-// Database name => test
-// Passing these 4 parameters
 
+//Console log function
 function console_log($output, $with_script_tags = true) {
     $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
 ');';
@@ -38,7 +35,6 @@ foreach($array as $row) {
     // into database Make Multiple 
     // Insert Query 
     
-
     // prepare and bind
 $stmt = $connect->prepare("INSERT INTO country_notification (country, country_code, continent, population, indicator, weekly_count, year_week, rate_14_day, cumulative_count, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("ssssssssss",  $country, $country_code, $continent, $population, $indicator, $weekly_count, $year_week, $rate_14_day, $cumulative_count, $source);
@@ -56,24 +52,12 @@ $stmt->bind_param("ssssssssss",  $country, $country_code, $continent, $populatio
  (isset($row["cumulative_count"])) ? $cumulative_count = $row["cumulative_count"] : '';
 (isset($row["source"])) ? $source = $row["source"] : '';
 
-
-
-// $country = $row["country"];
-// $country_code = $row["country_code"];
-// $continent = $row["continent"];
-// $population = $row["population"];
-// $indicator = $row["indicator"];
-// $weekly_count = $row["weekly_count"];
-// $year_week = $row["year_week"];
-// $rate_14_day = $row["rate_14_day"];
-// $cumulative_count = $row["cumulative_count"];
-// $source = $row["source"];
 $stmt->execute();
 
 echo "New records created successfully";
 
 $stmt->close();
-// $connect->close();
+
 }
 
 ?>

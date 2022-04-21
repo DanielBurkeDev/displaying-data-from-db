@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-// Creating a database named newDB
+// Creating a database named coviddb
 $sql = "CREATE DATABASE coviddb";
 if ($conn->query($sql) === TRUE) {
     echo "Database created successfully with the name coviddb";
@@ -23,7 +23,6 @@ if ($conn->query($sql) === TRUE) {
 }
 // closing connection
 $conn->close();
-
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Creating a table named country_notification
@@ -42,6 +41,25 @@ $sql = "CREATE TABLE country_notification(
 )";
 if ($conn->query($sql) === TRUE) {
     echo "<br>Table created successfully with the name country_notification";
+} else {
+    echo "Error creating Table: " . $conn->error;
+}
+// closing connection
+$conn->close();
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Creating a table named users
+$sql = "CREATE TABLE users (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(30),
+    lastname VARCHAR(30),   
+    username VARCHAR(30),
+    pw CHAR(32),
+    email VARCHAR(30)
+)";
+if ($conn->query($sql) === TRUE) {
+    echo "<br>Table created successfully with the name users";
 } else {
     echo "Error creating Table: " . $conn->error;
 }

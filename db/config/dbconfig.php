@@ -12,9 +12,9 @@ $dbname = "coviddb";
 
 function get_dbc() {
     $servername = "localhost";
-    $username = "";
-    $password = "";
-    $dbname = "";
+    $username = "db-urke";
+    $password = "FiadhFinn";
+    $dbname = "coviddb";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection

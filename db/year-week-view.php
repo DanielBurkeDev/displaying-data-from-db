@@ -7,7 +7,7 @@ $conn = get_dbc();
 
     $yw = $_GET['yw'];
    
-    echo "$yw"; 
+    // echo "$yw"; 
     // Query a db table named country_notification
     $sql = "SELECT * FROM country_notification WHERE year_week = '".$yw."'";
 
