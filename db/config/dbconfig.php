@@ -1,8 +1,8 @@
 <?php 
 $servername = "localhost";
-$username = "db-urke";
-$password = "FiadhFinn";
-$dbname = "coviddb";
+$username = "";
+$password = "";
+$dbname = "";
 
 // Creating a connection
 
@@ -12,9 +12,9 @@ $dbname = "coviddb";
 
 function get_dbc() {
     $servername = "localhost";
-    $username = "db-urke";
-    $password = "FiadhFinn";
-    $dbname = "coviddb";
+    $username = "";
+    $password = "";
+    $dbname = "";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
